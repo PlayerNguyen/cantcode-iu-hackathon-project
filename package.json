@@ -1,0 +1,46 @@
+{
+  "name": "cantcode-iu-hackathon-project",
+  "version": "1.0.0",
+  "private": "true",
+  "nodemonConfig": {
+    "ignore": [
+      "test/*",
+      "docs/*",
+      "node_modules/*",
+      "dist/*",
+      "client/*"
+    ]
+  },
+  "scripts": {
+    "start:server": "cross-env PORT=3000 node ./scripts/check-port.js && node ./server/index.js",
+    "start:client": "cross-env PORT=1234 node ./scripts/check-port.js && parcel serve ./client/src/Index.html --no-cache",
+    "serve:server": "cross-env PORT=3000 node ./scripts/check-port.js && nodemon ./server/index.js",
+    "serve:client": "cross-env PORT=1234 node ./scripts/check-port.js && parcel serve ./client/src/Index.html --no-cache",
+    "serve": "concurrently \"npm:serve:*\" "
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "concurrently": "^7.2.2",
+    "cors": "^2.8.5",
+    "detect-port": "^1.3.0",
+    "nodemon": "^2.0.19",
+    "parcel": "^2.6.2",
+    "postcss": "^8.4.14",
+    "process": "^0.11.10",
+    "react-icons": "^4.4.0",
+    "redux-logger": "^3.0.6",
+    "tailwindcss": "^3.1.6"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.3",
+    "body-parser": "^1.20.0",
+    "cross-env": "^7.0.3",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.4",
+    "morgan": "^1.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0"
+  }
+}
